@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Reels Downloader</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #e1306c;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #e1306c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #c62855;
+    }
+    p {
+      margin-top: 30px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Instagram Reels Downloader</h1>
+  <p>कृपया नीचे इंस्टाग्राम रील की लिंक डालें:</p>
+  <input type="text" id="reelLink" placeholder="https://www.instagram.com/reel/..." />
+  <button onclick="downloadReel()">डाउनलोड करें</button>
+
+  <script>
+    function downloadReel() {
+      const link = document.getElementById("reelLink").value;
+      if (link === "") {
+        alert("कृपया कोई लिंक दर्ज करें");
+        return;
+      }
+
+      // 3rd-party साइट की लिंक बनाएं (redirect method)
+      const redirectUrl = `https://snapsave.app/instagram-reels-downloader?url=${encodeURIComponent(link)}`;
+      window.open(redirectUrl, "_blank");
+    }
+  </script>
+</body>
+</html>
